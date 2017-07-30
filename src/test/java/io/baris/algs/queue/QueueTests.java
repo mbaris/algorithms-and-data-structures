@@ -15,7 +15,7 @@ public class QueueTests {
 		queueTest(arrayQueue);
 	}
 
-	public void queueTest(Queue<String> queue) {
+	private void queueTest(Queue<String> queue) {
 		for (int i = 0; i < 10; i++) {
 			queue.enqueue("roses");
 			queue.enqueue("are");

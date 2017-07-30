@@ -13,7 +13,7 @@ public class PriorityQueueTests {
 		Integer[] ints = { 2, 5, 8, 12, 43453, 65, 46, 4, 23, 879, 342, 34, 234 };
 		MaxPriorityQueue<Integer> q = new MaxPriorityQueue<Integer>(ints);
 		List<Integer> exclusion = new ArrayList<Integer>();
-		while (q.isEmpty() != true) {
+		while (!q.isEmpty()) {
 			Integer dequeue = q.dequeue();
 			assertTrue(dequeue.equals(max(ints, exclusion)));
 			exclusion.add(dequeue);
@@ -29,7 +29,7 @@ public class PriorityQueueTests {
 			assertTrue(i.equals(ints[counter++]));
 		}
 		List<Integer> exclusion = new ArrayList<Integer>();
-		while (q.isEmpty() != true) {
+		while (!q.isEmpty()) {
 			Integer dequeue = q.dequeue();
 			assertTrue(dequeue.equals(max(ints, exclusion)));
 			exclusion.add(dequeue);

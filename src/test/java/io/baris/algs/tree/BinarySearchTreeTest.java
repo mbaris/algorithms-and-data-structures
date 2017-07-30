@@ -48,9 +48,9 @@ public class BinarySearchTreeTest {
 	// sort the random number array and use it for validation
 	@Test
 	public void testBSTInteger() {
-		BinarySearchTree<Integer, Integer> bst = new BinarySearchTree<Integer, Integer>();
+		BinarySearchTree<Integer, Integer> bst = new BinarySearchTree<>();
 		Integer[] numbers = new Integer[10000];
-		populateCollection(numbers, bst);
+		populateArray(numbers, bst);
 		new MergeSort().sort(numbers);
 		int counter = 0;
 		while (bst.size() > 0) {
@@ -63,18 +63,17 @@ public class BinarySearchTreeTest {
 
 	}
 
-	private Integer[] populateCollection(Integer[] numbers, BinarySearchTree<Integer, Integer> bst) {
+	private void populateArray(Integer[] numbers, BinarySearchTree<Integer, Integer> bst) {
 		Random random = new Random();
 		for (int i = 0; i < 10000; i++) {
 			int num = random.nextInt(250000);
-			// check to see if the number is inserted before, if it is use a different number
+			// check to see if the number is inserted before and if it is, use a different number
 			while (bst.get(num) != null) {
 				num = random.nextInt(250000);
 			}
 			numbers[i] = num;
 			bst.put(num, i);
 		}
-		return numbers;
 	}
 
 }
