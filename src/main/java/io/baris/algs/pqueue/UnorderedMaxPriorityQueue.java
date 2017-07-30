@@ -1,8 +1,8 @@
 package io.baris.algs.pqueue;
 
-import java.util.Iterator;
-
 import io.baris.algs.queue.Queue;
+
+import java.util.Iterator;
 
 public class UnorderedMaxPriorityQueue<Key extends Comparable<Key>> implements Queue<Key> {
 

@@ -1,14 +1,12 @@
 package io.baris.algs.tree;
 
-import static org.junit.Assert.*;
-
-import java.util.Arrays;
-import java.util.List;
-import java.util.Random;
-
+import io.baris.algs.sorting.MergeSort;
 import org.junit.Test;
 
-import io.baris.algs.sorting.MergeSort;
+import java.util.Random;
+
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 public class BinarySearchTreeTest {
 
@@ -52,8 +50,8 @@ public class BinarySearchTreeTest {
 	public void testBSTInteger() {
 		BinarySearchTree<Integer, Integer> bst = new BinarySearchTree<Integer, Integer>();
 		Integer[] numbers = new Integer[10000];
-		populateaCollections(numbers, bst);
-		MergeSort.sort(numbers);
+		populateCollection(numbers, bst);
+		new MergeSort().sort(numbers);
 		int counter = 0;
 		while (bst.size() > 0) {
 			Integer bstMinKey = bst.min().getKey();
@@ -65,7 +63,7 @@ public class BinarySearchTreeTest {
 
 	}
 
-	private Integer[] populateaCollections(Integer[] numbers, BinarySearchTree<Integer, Integer> bst) {
+	private Integer[] populateCollection(Integer[] numbers, BinarySearchTree<Integer, Integer> bst) {
 		Random random = new Random();
 		for (int i = 0; i < 10000; i++) {
 			int num = random.nextInt(250000);

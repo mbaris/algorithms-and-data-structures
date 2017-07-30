@@ -1,7 +1,8 @@
 package io.baris.algs.stack;
 
 import org.junit.Test;
-import static org.junit.Assert.*;
+
+import static org.junit.Assert.assertSame;
 
 public class StackTests {
 

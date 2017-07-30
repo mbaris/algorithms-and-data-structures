@@ -1,7 +1,9 @@
 package io.baris.algs.queue;
 
 import org.junit.Test;
-import static org.junit.Assert.*;
+
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertSame;
 
 public class QueueTests {
 
