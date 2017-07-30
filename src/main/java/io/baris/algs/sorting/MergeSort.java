@@ -1,17 +1,15 @@
 package io.baris.algs.sorting;
 
-public class MergeSort extends SortAlgorithmBase {
+public class MergeSort<T extends Comparable<T>> extends AbstractSortAlgorithm<T> {
 
-	private static Comparable[] aux;
-
-	public static void sort(Comparable[] a) {
-		aux = new Comparable[a.length];
+	public void sort(Comparable[] a) {
+		Comparable[] aux = new Comparable[a.length];
 		sort(a, aux, 0, a.length - 1);
 	}
 
-	private static void sort(Comparable[] a, Comparable[] aux, int lo, int hi) {
+	private void sort(Comparable[] a, Comparable[] aux, int lo, int hi) {
 		if (hi <= lo + CUTOFF - 1) {
-			InsertionSort.sort(a, lo, hi);
+			new InsertionSort<>().sort(a, lo, hi);
 		}
 		if (hi <= lo) {
 			return;
@@ -25,11 +23,9 @@ public class MergeSort extends SortAlgorithmBase {
 		merge(a, aux, lo, mid, hi);
 	}
 
-	private static void merge(Comparable[] a, Comparable[] aux, int lo, int mid, int hi) {
+	private void merge(Comparable[] a, Comparable[] aux, int lo, int mid, int hi) {
 
-		for (int k = lo; k <= hi; k++) {
-			aux[k] = a[k];
-		}
+		System.arraycopy(a, lo, aux, lo, hi + 1 - lo);
 
 		int i = lo;
 		int j = mid + 1;
@@ -44,6 +40,5 @@ public class MergeSort extends SortAlgorithmBase {
 				a[k] = aux[i++];
 			}
 		}
-
 	}
 }

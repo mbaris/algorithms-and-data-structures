@@ -1,8 +1,8 @@
 package io.baris.algs.sorting;
 
-public class SelectionSort extends SortAlgorithmBase {
+public class SelectionSort<T extends Comparable<T>> extends AbstractSortAlgorithm<T> {
 
-	public static void sort(Comparable[] a) {
+	public void sort(Comparable<T>[] a) {
 		for (int i = 0; i < a.length; i++) {
 			int min = i;
 			for (int j = i + 1; j < a.length; j++) {
@@ -10,7 +10,7 @@ public class SelectionSort extends SortAlgorithmBase {
 					min = j;
 				}
 			}
-			exch(a, i, min);
+			exchange(a, i, min);
 		}
 	}
 }

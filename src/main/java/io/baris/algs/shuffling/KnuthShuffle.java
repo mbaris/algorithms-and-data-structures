@@ -2,14 +2,18 @@ package io.baris.algs.shuffling;
 
 import java.util.Random;
 
-import io.baris.algs.sorting.SortAlgorithmBase;
-
-public class KnuthShuffle extends SortAlgorithmBase {
-	public static void shuffle(Comparable[] a) {
+public class KnuthShuffle<T extends Comparable<T>> {
+	public void shuffle(Comparable<T>[] a) {
 		Random rnd = new Random();
 		for (int i = 0; i < a.length; i++) {
 			int r = rnd.nextInt(i + 1);
-			exch(a, i, r);
+			exchange(a, i, r);
 		}
+	}
+
+	private void exchange(Comparable<T>[] a, int i, int j) {
+		Comparable<T> swap = a[i];
+		a[i] = a[j];
+		a[j] = swap;
 	}
 }

@@ -1,14 +1,16 @@
 package io.baris.algs.sorting;
 
-public class HeapSortTest extends SortingTestBase {
+
+public class QuickSort3WayTest extends SortingTestBase {
 
     @Override
     AbstractSortAlgorithm<String> getStringSorter() {
-        return new HeapSort<>();
+        return new QuickSort3Way<>();
     }
 
     @Override
     AbstractSortAlgorithm<Integer> getIntegerSorter() {
-        return new HeapSort<>();
+        return new QuickSort3Way<>();
+
     }
 }

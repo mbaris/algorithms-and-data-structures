@@ -1,12 +1,12 @@
 package io.baris.algs.sorting;
 
-public class InsertionSort extends SortAlgorithmBase {
+public class InsertionSort<T extends Comparable<T>> extends AbstractSortAlgorithm<T> {
 
-	public static void sort(Comparable[] a, int lo, int hi) {
+	public void sort(Comparable<T>[] a, int lo, int hi) {
 		for (int i = lo; i < hi; i++) {
 			for (int j = i; j > lo; j--) {
 				if (less(a[j], a[j - 1])) {
-					exch(a, j, j - 1);
+					exchange(a, j, j - 1);
 				} else {
 					break;
 				}
@@ -14,7 +14,7 @@ public class InsertionSort extends SortAlgorithmBase {
 		}
 	}
 
-	public static void sort(Comparable[] a) {
+	public void sort(Comparable<T>[] a) {
 		sort(a,0,a.length);
 	}
 }

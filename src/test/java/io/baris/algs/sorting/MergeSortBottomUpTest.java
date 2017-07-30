@@ -1,14 +1,16 @@
 package io.baris.algs.sorting;
 
-public class HeapSortTest extends SortingTestBase {
+
+public class MergeSortBottomUpTest extends SortingTestBase {
+
 
     @Override
     AbstractSortAlgorithm<String> getStringSorter() {
-        return new HeapSort<>();
+        return new MergeSortBottomUp<>();
     }
 
     @Override
     AbstractSortAlgorithm<Integer> getIntegerSorter() {
-        return new HeapSort<>();
+        return new MergeSortBottomUp<>();
     }
 }
